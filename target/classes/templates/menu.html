@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Menu </title>
+</head>
+
+<body>
+
+<h1> Sveiki! </h1>
+
+<form action="/validOrder">
+
+    <table>
+        <thead>
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="item : ${menuItems}">
+            <td> <input th:id="${item.id}" type="checkbox"></td>
+            <td th:text="${item.item_name}"></td>
+            <td th:text="${item.item_price}"></td>
+            <td> <input type="text" id="quantity" name="quantity" placeholder="Enter number here"> </td>
+        </tr>
+        </tbody>
+    </table>
+
+<button> Add to cart </button>
+</form>
+
+
+
+
+</body>
+</html>
